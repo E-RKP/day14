@@ -164,3 +164,49 @@ function countAvailableBooks() {
 }
 
 console.log(`Ci sono ${countAvailableBooks(library)} libri disponibili in libreria`)
+
+function removeBookByTitle(titolo){
+
+  for (i=0; i<library.length;i++){
+    if (titolo === library[i].title){
+      library.splice([i], 1)
+    }
+  }
+}
+
+console.log(removeBookByTitle(''))
+
+function addNewBook(oggetto){
+
+  for (i=0; i<library.length;i++){
+    if (library[i].title === oggetto.title){
+      console.log('libro già esistente')
+      return;
+  }
+ 
+}
+library.push(oggetto)
+}
+
+addNewBook({title: 'Lucs',
+    author: 'Lucrazio Verti',
+    year: 1981,
+    isAvaible: false})
+
+console.log(avgYear(library))
+
+
+function getBooksPublishedBefore(yearr){
+
+  let newArr = []
+  for (i=0; i<library.length;i++){
+    if (library[i].year < yearr){
+      newArr.push(library[i].title)
+    }
+  }
+  return newArr;
+}
+
+console.log(getBooksPublishedBefore(2000))
+
+
