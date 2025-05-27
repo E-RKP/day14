@@ -35,3 +35,17 @@ console.log(getFullName(student))
 
 student.skill.push('inglese')
 console.log(student)
+
+console.log(Object.entries(student))
+
+function knowSkill (oggetto){
+
+  let skiller = student.skill
+  if (skiller.length<3){
+    console.log('troppo debole')
+  }else{
+    return true;
+  }
+}
+
+console.log(knowSkill(student))
