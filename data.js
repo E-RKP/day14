@@ -110,3 +110,32 @@ function borrowBook(titole){
 borrowBook('Il signore degli Anelli')
 console.log(library)
 
+
+function returnTitle (titelo){
+
+  for (i=0; i<library.length;i++){
+    if (library[i].title === titelo){
+      library[i].isAvaible = true;
+    }
+  }
+}
+
+returnTitle('American Gods');
+
+function avgYear (oggetto){
+
+  let età = 0
+  let somma = 0
+  let media = 0
+  for (i=0; i<library.length;i++){
+     età = 2025-library[i].year
+      somma = somma+età
+  }
+
+  media = somma / library.length
+   return media;
+}
+
+console.log(avgYear(library))
+
+
