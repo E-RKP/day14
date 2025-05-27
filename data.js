@@ -49,3 +49,64 @@ function knowSkill (oggetto){
 }
 
 console.log(knowSkill(student))
+
+let library = [
+
+  {
+    title: 'Cronaca di una morte annunciata',
+    author: 'Gabriel Garcia Marquez',
+    year: 1984,
+    isAvaible: false
+  },
+
+  {
+    title: '1963',
+    author: 'Stephen King',
+    year: 2007,
+    isAvaible: true
+  },
+
+  {
+    title: 'American Gods',
+    author: 'Neil Gaiman',
+    year: 2002,
+    isAvaible: false
+  },
+
+  {
+    title: 'Il signore degli Anelli',
+    author: 'Tolkien',
+    year: 1945,
+    isAvaible: true
+  }
+]
+
+function getAvailableBooks(oggetto){
+
+  let isAv = []
+  for (i=0; i<oggetto.length;i++){
+    if (oggetto[i].isAvaible === true){
+      isAv.push(oggetto[i])
+      
+    }
+   
+}
+
+return isAv;
+}
+
+console.log(getAvailableBooks(library))
+
+function borrowBook(titole){
+
+  for (i=0; i<library.length;i++){
+    if (library[i].title === titole){
+      library[i].isAvaible = false
+    }
+  }
+  
+}
+
+borrowBook('Il signore degli Anelli')
+console.log(library)
+
