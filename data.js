@@ -139,3 +139,28 @@ function avgYear (oggetto){
 console.log(avgYear(library))
 
 
+function getBooksByAuthor(autore){
+
+  let arr = []
+  for (i=0; i<library.length;i++){
+    if (library[i].author === autore){
+      arr.push(library[i].title)
+    }
+  }
+  return arr;
+}
+
+console.log(getBooksByAuthor('Stephen King'))
+
+function countAvailableBooks() {
+
+  let counter = 0
+  for (i=0; i<library.length;i++){
+    if (library[i].isAvaible === true){
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(`Ci sono ${countAvailableBooks(library)} libri disponibili in libreria`)
